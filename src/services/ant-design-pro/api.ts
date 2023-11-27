@@ -71,6 +71,8 @@ export async function listProduct(
   },
   options?: { [key: string]: any },
 ) {
+  console.log(params);
+  console.log(options);
   return request<API.RuleList>('/api/products', {
     method: 'GET',
     params: {
