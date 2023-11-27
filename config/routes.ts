@@ -16,17 +16,23 @@ export default [
     layout: false,
     routes: [
       {
-        name: 'login',
+        name: '登录',
         path: '/user/login',
         component: './User/Login',
       },
     ],
   },
   {
-    name: 'list.table-list',
+    name: '数据表格',
     icon: 'table',
     path: '/list',
     component: './TableList',
+  },
+  {
+    name: '数据报表',
+    icon: 'areaChart',
+    path: '/dashboard',
+    component: './Dashboard',
   },
   {
     path: '/',
