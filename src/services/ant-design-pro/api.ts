@@ -71,8 +71,6 @@ export async function listProduct(
   },
   options?: { [key: string]: any },
 ) {
-  console.log(params);
-  console.log(options);
   return request<API.ProductList>('/api/products', {
     method: 'GET',
     params: {
