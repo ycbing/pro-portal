@@ -23,7 +23,7 @@ FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # 将构建的应用程序复制到 Nginx 默认的 HTML 目录
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # 暴露 Nginx 默认端口
 EXPOSE 80
