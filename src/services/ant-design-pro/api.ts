@@ -51,7 +51,7 @@ export async function rule(
   },
   options?: { [key: string]: any },
 ) {
-  return request<API.RuleList>('/api/rule', {
+  return request<API.ProductList>('/api/rule', {
     method: 'GET',
     params: {
       ...params,
@@ -73,7 +73,7 @@ export async function listProduct(
 ) {
   console.log(params);
   console.log(options);
-  return request<API.RuleList>('/api/products', {
+  return request<API.ProductList>('/api/products', {
     method: 'GET',
     params: {
       ...params,
@@ -82,9 +82,46 @@ export async function listProduct(
   });
 }
 
+export async function listLv1() {
+  return request<any>('/api/products/lv1', { method: 'GET' });
+}
+
+export async function listLv2(lv1: string) {
+  return request<any>('/api/products/lv2', {
+    method: 'GET',
+    params: { lv1 },
+  });
+}
+
+export async function listLv3(lv2: string) {
+  return request<any>('/api/products/lv3', {
+    method: 'GET',
+    params: { lv2 },
+  });
+}
+
+export async function listLv4(lv3: string) {
+  return request<any>('/api/products/lv3', {
+    method: 'GET',
+    params: { lv3 },
+  });
+}
+
+export async function listSubPlatform() {
+  return request<any>('/api/products/sub_platform', {
+    method: 'GET',
+  });
+}
+
+export async function getStatBySubPlatform() {
+  return request<any>('/api/products/sub_platform_stat', {
+    method: 'GET',
+  });
+}
+
 /** 更新规则 PUT /api/rule */
 export async function updateRule(options?: { [key: string]: any }) {
-  return request<API.RuleListItem>('/api/rule', {
+  return request<API.ProductListItem>('/api/rule', {
     method: 'POST',
     data: {
       method: 'update',
@@ -95,7 +132,7 @@ export async function updateRule(options?: { [key: string]: any }) {
 
 /** 新建规则 POST /api/rule */
 export async function addRule(options?: { [key: string]: any }) {
-  return request<API.RuleListItem>('/api/rule', {
+  return request<API.ProductListItem>('/api/rule', {
     method: 'POST',
     data: {
       method: 'post',

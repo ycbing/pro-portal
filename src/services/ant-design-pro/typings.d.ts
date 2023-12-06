@@ -34,23 +34,21 @@ declare namespace API {
     pageSize?: number;
   };
 
-  type RuleListItem = {
-    key?: number;
-    disabled?: boolean;
-    href?: string;
-    avatar?: string;
-    name?: string;
-    owner?: string;
-    desc?: string;
-    callNo?: number;
-    status?: number;
-    updatedAt?: string;
-    createdAt?: string;
-    progress?: number;
+  type ProductListItem = {
+    _id: string;
+    lv1: string;
+    lv2: string;
+    lv3: string;
+    lv4: string;
+    subPlatform: string;
+    dateTime: string;
+    month: string;
+    sales: number;
+    salesVolume: number;
   };
 
-  type RuleList = {
-    data?: RuleListItem[];
+  type ProductList = {
+    data?: ProductListItem[];
     /** 列表的内容总数 */
     total?: number;
     success?: boolean;
